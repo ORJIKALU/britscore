@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+{% block title %}
+Home page
+{% endblock %}
+{% block main %}
+{% if clients | length < 1 %}
+    <div><h1 class="blue">NO CLIENT YET</h1></div>
+{%else%}
+    {%for client in clients%}
+        <div><h1 class="blue">{{client.name}}</h1></div>
+
+         <table class = "table table-striped">
+             <thead>
+                 <tr>
+                    <th>priority</th>
+                     <th>feature</th>
+                     <th>Description</th>
+                     <th>delivery day</th>
+                     <th>category</th>
+                 </tr>
+             </thead>
+             <tbody>
+                {%for feature in features%}
+                     {%if feature["client_id"] == client["id"]%}
+                     
+                     <tr>
+                        <td>{{feature.priority}}</td>
+                         <td>{{feature["title"]}}</td>
+                         <td>{{feature.description}}</td>
+                         <td>{{feature.date_expected}}</td>
+                         <td>{{feature.product_area}}</td>
+                     </tr>
+                     {%endif%}
+                 {%endfor%}
+             </tbody>
+        </table>
+    {% endfor%}
+{%endif%}
+
+{% endblock %}

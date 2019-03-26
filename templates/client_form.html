@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+add client
+{% endblock %}
+
+{% block main %}
+    <form action="/add_client"  id = "client_form" method="POST">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="client_name" placeholder="name" type="text"/>
+        </div>
+        <button id="client_button" class="btn btn-primary" type="submit">Add client</button>
+    </form>
+<!-- js files -->
+	<script src='/static/js/jquery.min.js'></script>
+	<script src="/static/js/script.js"></script>
+
+<!-- /js files -->
+
+{% endblock %}
