@@ -148,33 +148,3 @@ $(function() {
 });
   });
   
-$(function() {
-    $('#feature_button').bind('click', function() {
-  // Stop form from submitting normally
-  event.preventDefault();
-  if($('input[name="title"]').val() == ""){
-    alert("please add a title");
-  }
-  
- else if($('input[name="description"]').val() ==""){
-    alert("Describe the feature");
-  }
-  else if($('input[name="client_id"]').val() == null){
-    alert("select the client for the feature");
-  }
-  else if($('input[name="priority"]').val() ==""){
-    alert("set priority");
-  }
-  else if($('input[name="date"]').val() ==""){
-    alert("provide the target date");
-  }
-    else if($('input[name="product_area"]').val() ==""){
-    alert("provide the product area");
-  }
-else{
-              $("#feature_form").submit();
-
-}
-
-    });
-  });
