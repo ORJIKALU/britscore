@@ -1,4 +1,6 @@
 To use this implementation
+First import db from model.py on python command line 
+call create_all() to create the database
 you create a user
 Then  log in your user using the user username and password during creation
 create a client
