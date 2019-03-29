@@ -5,6 +5,12 @@ add featur
 {% endblock %}
 
 {% block main %}
+<!-- js files -->
+	<script src='/static/js/jquery.min.js'></script>
+	<script src="/static/js/script.js"></script>
+
+<!-- /js files -->
+
     <form action="/add_feature"  id = "feature_form" method="post">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="title" placeholder="Feature Title" type="text" required/>
@@ -14,8 +20,8 @@ add featur
             </div>
 
         <div  class="pure-u-1-2 reg-month puree-dropdown dropdown form-group">
-            <select  name="client_id" class="form-control" id="clients" required=required>
-            <option  selected value="" >For&nbsp; Client</option>
+            <select  name="client_id" class="form-control" id="clients">
+            <option  selected="" value="" disabled="">For&nbsp; Client</option>
             {% for client in clients %}
                     <option    value="{{client["id"]}}">{{client["name"]}}</option>
             {% endfor %}
@@ -30,8 +36,8 @@ add featur
             <b>Target date</b> <input  type="date"   name="date" required/>
         </div>
         <div  class="pure-u-1-2 reg-month puree-dropdown dropdown form-group">
-            <select class="form-control" name="product_area"  required=required>
-            <option  selected>Product Area</option>
+            <select class="form-control" name="product_area" id="products"  aria-required="true">
+            <option  selected="" value="" disabled="">Product Area</option>
                     <option  value="policies">Policies</option>
                     <option  value="billing">Billing</option>
                     <option  value="claims">Claims</option>
@@ -41,11 +47,6 @@ add featur
         </div>
         <button id="feature_button" class="btn btn-primary" type="submit">Submit</button>
     </form>
-<!-- js files -->
-	<script src='/static/js/jquery.min.js'></script>
-	<script src="/static/js/script.js"></script>
-
-<!-- /js files -->
 
 
 {% endblock %}
