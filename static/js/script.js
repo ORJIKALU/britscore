@@ -133,7 +133,7 @@ $(function() {
     $('#client_button').bind('click', function() {
   // Stop form from submitting normally
   event.preventDefault();
-  if($('input[name="client_name"]').val() == ""){
+  if($('input[name="client_name"]').val() == undefined){
     alert("you must provide a username");
   }
   else{
@@ -148,4 +148,32 @@ $(function() {
 });
   });
   
+$(function() {
+    $('#feature_button').bind('click', function() {
+  // Stop form from submitting normally
+  event.preventDefault();
+  if($('input[name="title"]').val() == ""){
+    alert("you must provide a title for feature");
+  }
+  else if($('input[name="description"]').val() == ""){
+    alert("you must provide a description for feature");
+  }
+  else if($('#clients').find(":selected").val() == ""){
+    alert("select the client for the feature");
+  }
+  else if($('input[name="priority"]').val() == ""){
+    alert("set priority");
+  }
+ else if($('input[name="date"]').val() == ""){
+    alert("choose a date for completion");
+  }
+  else if($('#products').find(":selected").val() == ""){
+    alert("you must provide a product area");
+  }
+  else{
+        $("#feature_form").submit();
+  }
 
+  
+});
+  });

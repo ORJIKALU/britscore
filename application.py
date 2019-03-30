@@ -202,14 +202,14 @@ def add_feature():
             client = Clients.query.all()
             return render_template("feature_form.html",error=error, row = rows, clients = client)
         if request.form.get("priority") == "":
-            error = "Describe feature"
+            error = "You must provide priority"
             client = Clients.query.all()
             return render_template("feature_form.html",error=error, row = rows, clients = client)
         if request.form.get("date") == "":
             error = "select target date"
             client = Clients.query.all()
             return render_template("feature_form.html",error=error, row = rows, clients = client)
-        if request.form.get("client_id") == None:
+        if request.form.get("client_id") == "":
             error = "select client name"
             client = Clients.query.all()
             return render_template("feature_form.html",error=error, row = rows, clients = client)
