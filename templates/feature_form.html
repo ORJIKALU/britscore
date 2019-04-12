@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-add feature
+add featur
 {% endblock %}
 
 {% block main %}
@@ -13,16 +13,13 @@ add feature
 
     <form action="/add_feature"  id = "feature_form" method="post">
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="title" placeholder="Feature Title" type="text" required="required"/>
+            <input autocomplete="off" autofocus class="form-control" name="title" placeholder="Feature Title" type="text" required="required"="required"/>
         </div>
             <div class="form-group">
-                <textarea  rows="4" cols="50" class="form-control" name="description" placeholder = "Describe feature" required="required"></textarea>
+                <textarea  rows="4" cols="50" class="form-control" name="description" placeholder = "Describe feature" required="required" required="required"></textarea>
             </div>
 
         <div  class="pure-u-1-2 reg-month puree-dropdown dropdown form-group">
-            <select  name="client_id" class="form-control" id="clients">
-            <option  selected="" value="" disabled="">For&nbsp; Client</option>
-
             <select  name="client_id" class="form-control" id="clients" required="required">
             <option   selected="" value="" disabled="">For&nbsp; Client</option>
             {% for client in clients %}
@@ -33,16 +30,12 @@ add feature
         </div>
 
         <div class="form-group">
-            <input  class="form-control" name="priority" placeholder="choose priority" type="number" min="0" required/>
             <input  class="form-control" name="priority" placeholder="choose priority" type="number" min="1" required="required"/>
         </div>
         <div class="form-group">
-            <b>Target date</b> <input  type="date"   name="date" required="required"/>
+            <b>Target date</b> <input  type="date"   name="date" required="required"="required"/>
         </div>
         <div  class="pure-u-1-2 reg-month puree-dropdown dropdown form-group">
-            <select class="form-control" name="product_area" id="products"  aria-required="true">
-            <option  selected="" value="" disabled="">Product Area</option>
-
             <select class="form-control" name="product_area"  required="required">
             <option  selected="" disabled="">Product Area</option>
                     <option  value="policies">Policies</option>
